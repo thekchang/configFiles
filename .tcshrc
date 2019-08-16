@@ -1,1 +1,3 @@
-/home/changk1/.tcshrc
+umask 000
+alias ls 'ls -p'
+setenv PATH ${PATH}:/home/changk1/scripts

@@ -1,6 +1,4 @@
 " trying to set the TAGS file according to which sandbox you're in.
-"let &tags=$TRACE_SANDBOX.'/Work/Software/TAGS'
-"let &tags=$TRACE_SANDBOX.'/Work/Software/tags'
 set tags=./tags;/ " this looks into the currect directory for 'TAGS', and looks recursively up towards root until one is found.
 
 " ctrl + \: open the definition in a new tab (note that is control + backslash not forward slash

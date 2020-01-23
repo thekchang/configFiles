@@ -1,4 +1,3 @@
-" trying to set the TAGS file according to which sandbox you're in.
 set tags=./tags;/ " this looks into the currect directory for 'TAGS', and looks recursively up towards root until one is found.
 
 " ctrl + \: open the definition in a new tab (note that is control + backslash not forward slash
@@ -70,7 +69,7 @@ autocmd FileType make,automake set noexpandtab shiftwidth=2 softtabstop=2
 
 "autocmd FileType python setlocal foldmethod=indent | set foldenable | set foldlevel=2
 
-autocmd FileType python setlocal foldmethod=indent | set foldenable | set shiftwidth=2 | set tabstop=2 | set foldlevel=2
+autocmd FileType python setlocal foldmethod=indent | set foldenable | set shiftwidth=2 | set tabstop=2 | set foldlevel=1
 "autocmd FileType python setlocal foldmethod=indent | set foldenable | set shiftwidth=4 | set tabstop=4
 
 "setlocal foldmethod=indent
@@ -80,5 +79,5 @@ autocmd FileType python setlocal foldmethod=indent | set foldenable | set shiftw
 
 set viminfo='20,\"50,:20,%,n~/.viminfo
 
-" set min num lines vim goes back to look for a comment. this prevents vim from incorrectly commenting stuff that it shouldn't as long as it can find the end of the last comment(s) (i think) within 1000 lines
+" set min num lines vim goes back to look for a comment. this prevents vim from incorrectly commenting stuff that it shouldn't as long as it can find the end of the last comment(s) (i think) within 1000 lines ...not sure this actually works as I want it to.
 syntax sync minlines=1000

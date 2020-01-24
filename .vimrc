@@ -1,4 +1,6 @@
 set tags=./tags;/ " this looks into the currect directory for 'TAGS', and looks recursively up towards root until one is found.
+":syntax sync fromstart
+map <F12> :syntax sync fromstart <CR>
 
 " ctrl + \: open the definition in a new tab (note that is control + backslash not forward slash
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>

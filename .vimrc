@@ -1,16 +1,18 @@
-set tags=./tags;/ " this looks into the currect directory for 'TAGS', and looks recursively up towards root until one is found.
-
+set tags=./tags;/ " this looks into the currect directory for 'tags', then looks recursively up toward root until one is found.
 
 " make syntax not freak out when using folds
 map <F12> :syntax sync fromstart <CR>
 
+" push F3 before pasting stuff in
+set pastetoggle=<F3>
+
 " ctrl + \: open the definition in a new tab (note that is control + backslash not forward slash
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
-" alt + ] open the definition in a vertical split. currently can't get this one to work...
+" ctrl + o: open the definition in a vertical split. currently can't get this one to work...
 map <C-O> :vsp <CR>:exec("tag ".expand("<cword>"))<CR> 
 
-" always have set line numbers
+" line numbers
 "set relativenumber
 "set number
 set nonumber
@@ -28,10 +30,10 @@ syntax on
 " trying to use default for now...the dark blue on the comments is nice for my brain haha.
 colorscheme desert
 
-" map ; to :
+" map ; to :. save my pinky
 nmap ; :
 
-" map ctrl+j and ctrl+k to down and up half a screen
+" map ctrl+j and ctrl+k to down and up half a screen in both normal mode and visual mode.
 nnoremap <C-j> <C-d>
 nnoremap <C-k> <C-u>
 
@@ -41,11 +43,6 @@ vnoremap <C-k> <C-u>
 " map f to za
 nnoremap f za
 vnoremap f zf
-
-" imap <buffer> :fo <C-O>mzfor( %%%; %%%; %%%)<CR>{ // %%%<CR>%%%<CR>}<CR><C-O>'z;;
-
-set pastetoggle=<F3>
-
 
 
 " makefile special configs

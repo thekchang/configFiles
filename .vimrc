@@ -1,5 +1,7 @@
 set tags=./tags;/ " this looks into the currect directory for 'TAGS', and looks recursively up towards root until one is found.
-":syntax sync fromstart
+
+
+" make syntax not freak out when using folds
 map <F12> :syntax sync fromstart <CR>
 
 " ctrl + \: open the definition in a new tab (note that is control + backslash not forward slash
@@ -7,7 +9,6 @@ map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 " alt + ] open the definition in a vertical split. currently can't get this one to work...
 map <C-O> :vsp <CR>:exec("tag ".expand("<cword>"))<CR> 
-"map <C-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR> 
 
 " always have set line numbers
 "set relativenumber
@@ -37,24 +38,6 @@ nnoremap <C-k> <C-u>
 vnoremap <C-j> <C-d>
 vnoremap <C-k> <C-u>
 
-" make views automatically load
-" autocmd BufWinLeave *.* mkview!
-" autocmd BufWinEnter *.* silent loadview
-
-"autocmd BufWinLeave * mkview!
-"autocmd BufWinEnter * silent loadview
-
-"augroup AutoSaveFolds
-"  autocmd!
-"  au BufWinLeave ?* mkview 1
-"  au BufWinEnter ?* silent loadview 1
-"augroup END
-
-" map space to something.
-"nnoremap <space> <C>
-"nnoremap <Space>] <C-]>
-"nnoremap <@-j> <C-d>
-
 " map f to za
 nnoremap f za
 vnoremap f zf
@@ -80,6 +63,3 @@ autocmd FileType python setlocal foldmethod=indent | set foldenable | set shiftw
 "au BufReadPost,BufNewFile *.py set foldmethod=indent foldnestmax=2
 
 set viminfo='20,\"50,:20,%,n~/.viminfo
-
-" set min num lines vim goes back to look for a comment. this prevents vim from incorrectly commenting stuff that it shouldn't as long as it can find the end of the last comment(s) (i think) within 1000 lines ...not sure this actually works as I want it to.
-syntax sync minlines=1000
